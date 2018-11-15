@@ -1,2 +1,3 @@
+# Tracking
+GERM team's Trekking robot 
 
-Download the URDF model, put it into catkin_ws/

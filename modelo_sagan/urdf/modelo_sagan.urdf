@@ -82,7 +82,7 @@
   </link>
   <joint
     name="eixo_Susp_R"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.0492787962347225 -0.41 0.0314863650603519"
       rpy="-1.5707963267949 -0.997789985484159 9.48986181582886E-17" />
@@ -125,7 +125,7 @@
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
+        xyz="7 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -134,7 +134,7 @@
     </collision>
   </link>
   <joint
-    name="eixo1"
+    name="eixoRFW"
     type="fixed">
     <origin
       xyz="0.00083235 0.20699 -0.050813"
@@ -187,7 +187,7 @@
     </collision>
   </link>
   <joint
-    name="eixo2"
+    name="eixoRBW"
     type="fixed">
     <origin
       xyz="-0.178838257906476 -0.104213429510882 -0.0483125"
@@ -240,8 +240,8 @@
     </collision>
   </link>
   <joint
-    name="eixo"
-    type="continuous">
+    name="eixo_Susp_L"
+    type="fixed">
     <origin
       xyz="-0.0492787962347225 -0.1596 0.0314863650603519"
       rpy="-1.5707963267949 -1.0764644338619 3.14159265358979" />
@@ -293,7 +293,7 @@
     </collision>
   </link>
   <joint
-    name="eixo3"
+    name="eixoLFW"
     type="fixed">
     <origin
       xyz="-0.178838257906464 -0.104213429510898 -0.0204124999999994"
@@ -346,8 +346,8 @@
     </collision>
   </link>
   <joint
-    name="eixo4"
-    type="continuous">
+    name="eixoLBW"
+    type="fixed">
     <origin
       xyz="0.000832348418708467 0.206985189270995 0"
       rpy="3.14159265358979 0 -0.835419970873937" />
