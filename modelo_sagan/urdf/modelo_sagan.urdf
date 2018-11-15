@@ -1,0 +1,361 @@
+<robot
+  name="modelo_sagan">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0444310059293012 -0.3 0.0622702114065027"
+        rpy="0 0 0" />
+      <mass
+        value="0.793701198940021" />
+      <inertia
+        ixx="0.00346642745161757"
+        ixy="6.34553575975384E-19"
+        ixz="-0.000440436800758407"
+        iyy="0.00244776176348504"
+        iyz="6.42269877250963E-19"
+        izz="0.00490897911186748" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Susp_right">
+    <inertial>
+      <origin
+        xyz="-0.0367180930274202 -0.0139956206617251 -0.0135528661805364"
+        rpy="0 0 0" />
+      <mass
+        value="0.291792316463795" />
+      <inertia
+        ixx="0.00189491394131588"
+        ixy="-0.00125671559561288"
+        ixz="3.24148332283172E-06"
+        iyy="0.00119368120662915"
+        iyz="1.28213006448375E-06"
+        izz="0.00308636670929111" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/Susp_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/Susp_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="eixo_Susp_R"
+    type="continuous">
+    <origin
+      xyz="-0.0492787962347225 -0.41 0.0314863650603519"
+      rpy="-1.5707963267949 -0.997789985484159 9.48986181582886E-17" />
+    <parent
+      link="base_link" />
+    <child
+      link="Susp_right" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="R_Front_wheel">
+    <inertial>
+      <origin
+        xyz="3.66373598126302E-15 -1.69309011255336E-15 0.00163770079233821"
+        rpy="0 0 0" />
+      <mass
+        value="0.250087817580495" />
+      <inertia
+        ixx="4.59573165509559E-06"
+        ixy="0"
+        ixz="-2.25040567409979E-18"
+        iyy="4.59573165509559E-06"
+        iyz="1.02312258002524E-18"
+        izz="5.83801355502451E-30" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/R_Front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/R_Front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="eixo1"
+    type="fixed">
+    <origin
+      xyz="0.00083235 0.20699 -0.050813"
+      rpy="3.1416 0 -0.55205" />
+    <parent
+      link="Susp_right" />
+    <child
+      link="R_Front_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="R_Back_wheel">
+    <inertial>
+      <origin
+        xyz="3.62210261783957E-15 1.66533453693773E-16 -0.00413770079233833"
+        rpy="0 0 0" />
+      <mass
+        value="0.250087817580495" />
+      <inertia
+        ixx="4.59573165509569E-06"
+        ixy="0"
+        ixz="1.10995971625901E-18"
+        iyy="4.59573165509569E-06"
+        iyz="-4.11227445186882E-21"
+        izz="1.87606031515425E-28" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/R_Back_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/R_Back_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="eixo2"
+    type="fixed">
+    <origin
+      xyz="-0.178838257906476 -0.104213429510882 -0.0483125"
+      rpy="0 0 2.14187631042243" />
+    <parent
+      link="Susp_right" />
+    <child
+      link="R_Back_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Susp_left">
+    <inertial>
+      <origin
+        xyz="-0.0367180930274213 -0.0139956206617264 0.0168471338194642"
+        rpy="0 0 0" />
+      <mass
+        value="0.291792316463796" />
+      <inertia
+        ixx="0.0018949139413159"
+        ixy="-0.00125671559561291"
+        ixz="3.24148332283041E-06"
+        iyy="0.00119368120662919"
+        iyz="1.28213006448251E-06"
+        izz="0.00308636670929116" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/Susp_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/Susp_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="eixo"
+    type="continuous">
+    <origin
+      xyz="-0.0492787962347225 -0.1596 0.0314863650603519"
+      rpy="-1.5707963267949 -1.0764644338619 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="Susp_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="L_Front_wheel">
+    <inertial>
+      <origin
+        xyz="1.72084568816899E-15 -4.30211422042248E-16 0.0016377007923383"
+        rpy="0 0 0" />
+      <mass
+        value="0.250087817580495" />
+      <inertia
+        ixx="4.59573165509563E-06"
+        ixy="2.64697796016969E-23"
+        ixz="-1.10257299057821E-18"
+        iyy="4.59573165509563E-06"
+        iyz="2.07636838168532E-19"
+        izz="1.12495490728928E-30" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/L_Front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/L_Front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="eixo3"
+    type="fixed">
+    <origin
+      xyz="-0.178838257906464 -0.104213429510898 -0.0204124999999994"
+      rpy="3.14159265358979 0 -0.420787783674323" />
+    <parent
+      link="Susp_left" />
+    <child
+      link="L_Front_wheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="L_Back_wheel">
+    <inertial>
+      <origin
+        xyz="-6.10622663543836E-16 5.55111512312578E-16 0.0220502007923377"
+        rpy="0 0 0" />
+      <mass
+        value="0.250087817580495" />
+      <inertia
+        ixx="4.59573165509559E-06"
+        ixy="0"
+        ixz="7.62666975930451E-19"
+        iyy="4.59573165509559E-06"
+        iyz="-5.81056453654185E-19"
+        izz="6.37489559775246E-31" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/L_Back_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modelo_sagan/meshes/L_Back_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="eixo4"
+    type="continuous">
+    <origin
+      xyz="0.000832348418708467 0.206985189270995 0"
+      rpy="3.14159265358979 0 -0.835419970873937" />
+    <parent
+      link="Susp_left" />
+    <child
+      link="L_Back_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>
