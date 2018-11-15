@@ -1,3 +1,3 @@
 # Tracking
-GERM team's Trekking robot 
+GERM team's Tracking robot 
 
